@@ -9,5 +9,4 @@ Cross-Modal Visual-Tactile Data Generation using Generative Adversarial Networks
 
 ```
     python mian.py
-
 ```
