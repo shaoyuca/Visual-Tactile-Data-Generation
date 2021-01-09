@@ -5,8 +5,16 @@ Cross-Modal Visual-Tactile Data Generation using Generative Adversarial Networks
 
 ![image](https://github.com/shaoyuca/Visual-Tactile-Data-Generation/blob/main/image-folder/teas.jpg)
 
-## How to run
+## Usage
 
 ```
-    python mian.py
+python mian.py
+```
+## Classifier Testing
+
+```
+python V2Tclassifier.py 
+```
+```
+python T2Vclassiifer.py
 ```
