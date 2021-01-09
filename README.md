@@ -10,7 +10,7 @@ Cross-Modal Visual-Tactile Data Generation using Generative Adversarial Networks
 ```
 python mian.py
 ```
-## Classifier Testing
+## Classification Testing
 
 ```
 python V2Tclassifier.py 
