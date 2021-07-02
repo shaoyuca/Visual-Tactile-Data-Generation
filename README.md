@@ -20,7 +20,8 @@ Environment requirements:
 
 ## Usage
 
-- Train the model:
+- Train the model (Users could set the number of epoch):
+- Tactile-to-Visual(T2V)
 ```bash
 pyhton CM_T2V.py --train --epoch <number>
 ```
