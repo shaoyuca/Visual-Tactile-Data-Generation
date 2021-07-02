@@ -67,4 +67,4 @@ python tactileclass.py
 Data: Training and testing data can be downloaded [here](https://drive.google.com/drive/folders/1J6G-KzMinu5XfAzQ2yzPUoy69ZcXWwEV?usp=sharing). After extracting the compressed file, put all the folders (from the downloaded folder) in the project directory './dataset' (the same directory where the teaser locates in).
 
 ## Acknowledgement
-The original dataset is from LMT-109 Surface-Material database[LMT-Haptic-Database](https://zeus.lmt.ei.tum.de/downloads/texture/). Thanks for the great work!
+The original dataset is from LMT-108-Surface-Material database [LMT-Haptic-Database](https://zeus.lmt.ei.tum.de/downloads/texture/). Thanks for the great work!
