@@ -40,7 +40,8 @@ python CM_T2V.py --test
 python CM_V2T.py --test
 ```
 
-- Visualize the generated frictional signals:
+Visualize the generated frictional signals:
+- T2V and V2T
 ```bash
 python CM_T2V.py --visualize
 ```
@@ -48,10 +49,19 @@ python CM_T2V.py --visualize
 python CM_V2T.py --visualize
 ```
 
-- Visualize the training processing:
+Visualize the training processing:
 ```bash
 cd logs
 tensorboard --logdir=./
 ```
+Evaluation:
+- Visual Classification
+```bash
+python visualclass.py
+```
+- Tactile Classification
+```bash
+python tactileclass.py
+```
 
-- Data: Training and testing data can be downloaded [here](https://drive.google.com/drive/folders/1J6G-KzMinu5XfAzQ2yzPUoy69ZcXWwEV?usp=sharing). After extracting the compressed file, put all the folders (from the downloaded folder) in the project directory './dataset' (the same directory where the teaser locates in).
+Data: Training and testing data can be downloaded [here](https://drive.google.com/drive/folders/1J6G-KzMinu5XfAzQ2yzPUoy69ZcXWwEV?usp=sharing). After extracting the compressed file, put all the folders (from the downloaded folder) in the project directory './dataset' (the same directory where the teaser locates in).
