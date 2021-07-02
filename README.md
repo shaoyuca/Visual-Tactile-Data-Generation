@@ -41,3 +41,4 @@ cd logs
 tensorboard --logdir=./
 ```
 
+- Data: Training and testing data can be downloaded [here](https://drive.google.com/drive/folders/1J6G-KzMinu5XfAzQ2yzPUoy69ZcXWwEV?usp=sharing). After extracting the compressed file, put all the folders (from the downloaded folder) in the project directory './dataset' (the same directory where the teaser file locates in).
