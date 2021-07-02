@@ -17,17 +17,13 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 from tensorflow.compat.v1 import ConfigProto
 from tensorflow.compat.v1 import InteractiveSession
-
-
 config = ConfigProto()
 config.gpu_options.allow_growth = True
 session = InteractiveSession(config=config)
 
-EPOCHS = 300
-log_dir = "/media/shaoyu/f36f1f3d-bf9e-4b27-8e30-e34246bbeb99/shaoyu/Downloads/dataset/logs2/"
-PATH = '/media/shaoyu/f36f1f3d-bf9e-4b27-8e30-e34246bbeb99/shaoyu/Downloads/dataset/ICRADATA/'
-#log_dir = "logs2/"
-#PATH = 'dataset/ICRADATA/'
+log_dir = "logs2/"
+PATH = 'dataset/'
+
 
 summary_writer = tf.summary.create_file_writer(log_dir + "fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 # Train
@@ -359,10 +355,9 @@ def vgg54():
 vgg = vgg54()
 
 # Optimizer
-generator_optimizer = tf.keras.optimizers.Adam(0.0001)
-discriminator_optimizer = tf.keras.optimizers.Adam(0.0001)
-checkpoint_dir = '/media/shaoyu/f36f1f3d-bf9e-4b27-8e30-e34246bbeb99/shaoyu/Downloads/dataset/testmodel/training_checkpoints/a5new'
-#checkpoint_dir = './model'
+generator_optimizer = tf.keras.optimizers.Adam(0.0002)
+discriminator_optimizer = tf.keras.optimizers.Adam(0.0002)
+checkpoint_dir = './model'
 checkpoint_prefix = os.path.join(checkpoint_dir, "ckpt")
 checkpoint = tf.train.Checkpoint(generator_optimizer=generator_optimizer,
                                  discriminator_optimizer=discriminator_optimizer,
@@ -582,7 +577,7 @@ checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epoch', type=int, dest='epoch', default=200)
+    parser.add_argument('--epoch', type=int, dest='epoch', default=400)
     parser.add_argument('--train', help='train', action='store_true')
     parser.add_argument('--test', help='test', action='store_true')
     parser.add_argument('--visualize', help='visualize result', action='store_true')
@@ -595,14 +590,14 @@ def main():
     if (args.test):
         checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
         i = 0
-        for inp, tar in test_dataset.take(600):
+        for inp, tar in test_dataset.take(1800):
            data_save(generator, inp, i)
            i=i+1
 
     if (args.visualize):
         checkpoint.restore(tf.train.latest_checkpoint(checkpoint_dir))
         i = 0
-        for inp, tar in show_dataset.take(600):
+        for inp, tar in show_dataset.take(1800):
             generate_images(generator, inp, tar, i)
             i=i+1
 
