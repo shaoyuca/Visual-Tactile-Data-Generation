@@ -30,14 +30,22 @@ pyhton CM_T2V.py --train --epoch <number>
 pyhton CM_V2T.py --train --epoch <number>
 ```
 
-- Test the model:
+Test the model:
+- Tactile-to-Visual (T2V)
 ```bash
 python CM_T2V.py --test
+```
+- Visual-to-Tactile (V2T)
+```bash
+python CM_V2T.py --test
 ```
 
 - Visualize the generated frictional signals:
 ```bash
 python CM_T2V.py --visualize
+```
+```bash
+python CM_V2T.py --visualize
 ```
 
 - Visualize the training processing:
