@@ -83,25 +83,23 @@ def my_func(txt):
 
 def load(txt_name, image_name):
 
+    # load the processed spectrogram and image
     image = tf.io.read_file(image_name)
     image = tf.image.decode_jpeg(image, channels=1)
-
-    # load the normalized spectrogram data
     txt = tf.compat.v1.py_func(my_func, [txt_name], tf.float32)
     txt = tf.reshape(txt, [256, 256, 1])
 
     input_image = tf.cast(image, tf.float32)
     real_data = tf.cast(txt, tf.float32)
 
-    if tf.random.uniform(()) > 0.7:
+    if tf.random.uniform(()) > 0.8:
         input_image = tf.image.flip_left_right(input_image)
-    if tf.random.uniform(()) < 0.3:
+    if tf.random.uniform(()) < 0.2:
         input_image = tf.image.flip_up_down(input_image)
 
-    input_image = tf.image.random_contrast(input_image, lower=0, upper=2)
-    input_image = tf.image.random_brightness(input_image, 0.2)
-
-
+    input_image = tf.image.random_contrast(input_image, lower=0, upper=1)
+    input_image = tf.image.random_brightness(input_image, 0.1)
+    
     input_image = (input_image / 127.5) - 1
 
     return real_data, input_image
@@ -428,7 +426,7 @@ def data_save(model, test_input, i):
     inp_spec = np.reshape(prediction[0], [256, 256])  # -1 - 1
     inp_spec = inp_spec * 0.5 + 0.5
     inp_spec = inp_spec * 255.0
-    cv2.imwrite("generated_images/{}.jpg".format(i), inp_spec)
+    cv2.imwrite("generated_images/{}.npy".format(i), inp_spec)
 
 
 gpl = 10
