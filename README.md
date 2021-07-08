@@ -1,7 +1,7 @@
 # Cross-Modal-Visual-Tactile-Data-Generation
 This is the source code for our paper: 
 
-[Visual-Tactile Cross-Modal Data Generation using Residue-Fusion GAN with Feature-Matching and Perceptual Losses] (https://shaoyuca.github.io/mypage/assets/img/Visual_Tactile_Generation.pdf)
+[Visual-Tactile Cross-Modal Data Generation using Residue-Fusion GAN with Feature-Matching and Perceptual Losses](https://shaoyuca.github.io/mypage/assets/img/Visual_Tactile_Generation.pdf)
 
 ![image](https://github.com/shaoyuca/Visual-Tactile-Data-Generation/blob/main/dataset/teaser.png)
 
